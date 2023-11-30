@@ -1,4 +1,3 @@
-package exception.HotelMgmt;
 
 import java.util.Scanner;
 
@@ -7,9 +6,11 @@ public class Main {
         int option;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the customer details:");
-
+        Integer n = 5;
         Customer c1 = new Customer();
         c1.setDetails();
+        HotelImp h = new HotelImp();
+
         System.out.println("Welcome to the hotel!");
 
         while (true) {
@@ -21,11 +22,11 @@ public class Main {
             option = sc.nextInt();
             switch (option) {
                 case 1:
-                    c1.addOrders();
+                    h.addOrders();
                     break;
 
                 case 2:
-                    c1.getBill();
+                    h.getBill();
                     break;
 
                 case 3:

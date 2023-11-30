@@ -6,7 +6,6 @@ public class Main {
         int option;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the customer details:");
-        Integer n = 5;
         Customer c1 = new Customer();
         c1.setDetails();
         HotelImp h = new HotelImp();

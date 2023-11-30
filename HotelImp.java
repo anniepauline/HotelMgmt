@@ -15,8 +15,8 @@ public class HotelImp implements Hotel {
 
         for (int k = 0; k < qty.length; k++) {
             if (qty[k] != 0) {
-                total[k] = +price[k] * qty[k];
-                gTotal = +total[k];
+                total[k] =+ price[k] * qty[k];
+                gTotal =+ total[k];
             }
 
         }
@@ -41,34 +41,58 @@ public class HotelImp implements Hotel {
         System.out.println("2.Dosa Rs.40/pc");
         System.out.println("3.Gobi Rs.50/plate");
         System.out.println("Enter your choice");
+
         option = sc.nextInt();
+
         switch (option) {
             case 1:
-                // HoteInf roti = h.getObject("Roti");
-                // System.out.println(roti);
+
                 System.out.println("How many Roti?");
                 int rqty = sc.nextInt();
-                qty[0] = qty[0] + rqty;
-                // total += roti.price * qty[0];
-                // orders[i++] = roti;
-                System.out.println("Ordered " + rqty + " Roti");
+                try {
+                    if (rqty < 0) {
+                        throw new NegativeNumber("NegativeNumberException");
+                    } else {
+                        qty[0] = qty[0] + rqty;
+                        System.out.println("Ordered " + rqty + " Roti");
+                    }
+                } catch (NegativeNumber n) {
+                    System.out.println("Please enter a valid value");
+                }
 
                 break;
             case 2:
                 System.out.println("How many Doas?");
                 int dqty = sc.nextInt();
-                qty[1] += dqty;
-                System.out.println("Ordered " + dqty + " Dosa");
+                try {
+                    if (dqty < 0) {
+                        throw new NegativeNumber("NegativeNumberException");
+                    } else {
+                        qty[1] += dqty;
+                        System.out.println("Ordered " + dqty + " Dosa");
+                    }
+                } catch (NegativeNumber n) {
+                    System.out.println("Please enter a valid value");
+                }
 
                 break;
             case 3:
                 System.out.println("How many Gobi?");
                 int gqty = sc.nextInt();
-                qty[2] += gqty;
-                System.out.println("Ordered " + gqty + " Gobi");
+                try {
+                    if (gqty < 0) {
+                        throw new NegativeNumber("NegativeNumberException");
+                    } else {
+                        qty[2] += gqty;
+                        System.out.println("Ordered " + gqty + " Gobi");
+                    }
+                } catch (NegativeNumber n) {
+                    System.out.println("Please enter a valid value");
+                }
 
                 break;
             default:
+                System.out.println("Please enter a valid option!");
                 break;
         }
     }
